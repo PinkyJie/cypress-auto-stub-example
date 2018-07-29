@@ -1,0 +1,14 @@
+{
+  "name": "cypress-pollyjs-example",
+  "version": "1.0.0",
+  "description": "Example project to demonstrate how to use Pollyjs with Cypress.",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^3.0.2",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "cypress": "cypress open",
+    "serve": "http-server -p 3000"
+  }
+}

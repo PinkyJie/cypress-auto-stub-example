@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <script>
+    function request(url) {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', function () {
+          resolve(xhr);
+        });
+
+        xhr.addEventListener('error', reject);
+        xhr.open('GET', url, true);
+        xhr.send();
+      });
+    }
+
+    function xhrClick() {
+      request('https://jsonplaceholder.typicode.com/posts/1')
+        .then(res => {
+          document.querySelector('#xhr-result').textContent = res.responseText;
+        });
+    }
+
+    function fetchClick() {
+      fetch('https://jsonplaceholder.typicode.com/users/1')
+        .then(response => response.json())
+        .then(json => {
+          document.querySelector('#fetch-result').textContent = JSON.stringify(json);
+        });
+    }
+
+  </script>
+</head>
+
+<body>
+  <button id="xhr-btn" onclick="xhrClick()">Test XHR</button>
+  <div id="xhr-result"></div>
+
+  <button id="fetch-btn" onclick="fetchClick()">Test fetch</button>
+  <div id="fetch-result"></div>
+</body>
+
+</html>
