@@ -1,1 +1,5 @@
-{}
+{
+  "env": {
+    "polly.recordingServerPort": 34567
+  }
+}
