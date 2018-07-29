@@ -1,0 +1,15 @@
+{
+  "name": "cypress-pollyjs-plugin",
+  "version": "1.0.0",
+  "description": "A Cypress plugin to record, replay, and stub HTTP interactions with Pollyjs",
+  "main": "index.js",
+  "author": "Wenbo Jie <pinkyjie.gn@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@pollyjs/adapter-fetch": "^1.0.1",
+    "@pollyjs/adapter-xhr": "^1.0.1",
+    "@pollyjs/cli": "^1.0.0",
+    "@pollyjs/core": "^1.1.0",
+    "@pollyjs/persister-rest": "^1.0.1"
+  }
+}
