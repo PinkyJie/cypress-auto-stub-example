@@ -7,6 +7,7 @@ interface APIRecord {
   response: {
     body: any;
   };
+  timestamp: string;
 }
 
 interface APISnapshotFixture {
@@ -18,5 +19,7 @@ declare namespace Cypress {
   interface Chainable {
     _apiData: APIRecord[];
     _apiCount: number;
+
+    waitUntilAllAPIFinished: () => {};
   }
 }

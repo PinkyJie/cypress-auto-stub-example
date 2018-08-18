@@ -26,12 +26,17 @@ before(() => {
 
 beforeEach(function() {
   const isAutoStubEnabled = Cypress.env('autoRecordEnabled');
-  cy.log(`API Auto Record: ${isAutoStubEnabled ? 'ON' : 'OFF'}`);
+  cy.log(`API Auto Recording: ${isAutoStubEnabled ? 'ON' : 'OFF'}`);
+  if (isAutoStubEnabled) {
+    cy.log('Use real API response.');
+  } else {
+    cy.log('Use recorded API response.');
+  }
 
   cy._apiData = [];
   cy._apiCount = 0;
   cy.server({
-    onRequest: (req: any) => {
+    onRequest: (xhr: any) => {
       cy._apiCount++;
     },
     onResponse: (xhr: any) => {
@@ -48,7 +53,13 @@ beforeEach(function() {
           body: xhr.response.body,
         };
         // save API request/response into an array so we can write these info to fixture
-        cy._apiData.push({ url, method, request, response });
+        cy._apiData.push({
+          url,
+          method,
+          request,
+          response,
+          timestamp: new Date().toJSON(),
+        });
       }
     },
   });

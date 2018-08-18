@@ -33,7 +33,45 @@
             }
           ]
         }
-      }
+      },
+      "timestamp": "2018-08-18T13:36:41.709Z"
+    },
+    {
+      "url": "/api/users",
+      "method": "POST",
+      "request": {
+        "body": {
+          "name": "Cypress",
+          "job": "Tester"
+        }
+      },
+      "response": {
+        "body": {
+          "name": "Cypress",
+          "job": "Tester",
+          "id": "791",
+          "createdAt": "2018-08-18T13:38:34.317Z"
+        }
+      },
+      "timestamp": "2018-08-18T13:36:42.808Z"
+    },
+    {
+      "url": "/api/users/1",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 1,
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:43.423Z"
     },
     {
       "url": "/api/users/2",
@@ -50,25 +88,512 @@
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
           }
         }
-      }
+      },
+      "timestamp": "2018-08-18T13:36:44.036Z"
     },
     {
-      "url": "/api/users",
-      "method": "POST",
+      "url": "/api/users/3",
+      "method": "get",
       "request": {
-        "body": {
-          "name": "Cypress",
-          "job": "Tester"
-        }
+        "body": null
       },
       "response": {
         "body": {
-          "name": "Cypress",
-          "job": "Tester",
-          "id": "581",
-          "createdAt": "2018-08-18T08:02:36.298Z"
+          "data": {
+            "id": 3,
+            "first_name": "Emma",
+            "last_name": "Wong",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+          }
         }
-      }
+      },
+      "timestamp": "2018-08-18T13:36:44.650Z"
+    },
+    {
+      "url": "/api/users/4",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 4,
+            "first_name": "Eve",
+            "last_name": "Holt",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:44.971Z"
+    },
+    {
+      "url": "/api/users/5",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 5,
+            "first_name": "Charles",
+            "last_name": "Morris",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:45.573Z"
+    },
+    {
+      "url": "/api/users/6",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 6,
+            "first_name": "Tracey",
+            "last_name": "Ramos",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:45.868Z"
+    },
+    {
+      "url": "/api/users/7",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 7,
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:46.183Z"
+    },
+    {
+      "url": "/api/users/8",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 8,
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:46.486Z"
+    },
+    {
+      "url": "/api/users/9",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 9,
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:46.786Z"
+    },
+    {
+      "url": "/api/users/10",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 10,
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:47.084Z"
+    },
+    {
+      "url": "/api/users/1",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 1,
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:47.382Z"
+    },
+    {
+      "url": "/api/users/2",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 2,
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:47.685Z"
+    },
+    {
+      "url": "/api/users/3",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 3,
+            "first_name": "Emma",
+            "last_name": "Wong",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:48.336Z"
+    },
+    {
+      "url": "/api/users/4",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 4,
+            "first_name": "Eve",
+            "last_name": "Holt",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:49.258Z"
+    },
+    {
+      "url": "/api/users/5",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 5,
+            "first_name": "Charles",
+            "last_name": "Morris",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:49.873Z"
+    },
+    {
+      "url": "/api/users/6",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 6,
+            "first_name": "Tracey",
+            "last_name": "Ramos",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:50.183Z"
+    },
+    {
+      "url": "/api/users/7",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 7,
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:50.501Z"
+    },
+    {
+      "url": "/api/users/8",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 8,
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:50.799Z"
+    },
+    {
+      "url": "/api/users/9",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 9,
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:51.107Z"
+    },
+    {
+      "url": "/api/users/10",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 10,
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:51.409Z"
+    },
+    {
+      "url": "/api/users/1",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 1,
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:51.719Z"
+    },
+    {
+      "url": "/api/users/2",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 2,
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:52.018Z"
+    },
+    {
+      "url": "/api/users/3",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 3,
+            "first_name": "Emma",
+            "last_name": "Wong",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:52.314Z"
+    },
+    {
+      "url": "/api/users/4",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 4,
+            "first_name": "Eve",
+            "last_name": "Holt",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:52.626Z"
+    },
+    {
+      "url": "/api/users/5",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 5,
+            "first_name": "Charles",
+            "last_name": "Morris",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:52.935Z"
+    },
+    {
+      "url": "/api/users/6",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 6,
+            "first_name": "Tracey",
+            "last_name": "Ramos",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:53.238Z"
+    },
+    {
+      "url": "/api/users/7",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 7,
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:53.867Z"
+    },
+    {
+      "url": "/api/users/8",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 8,
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:54.482Z"
+    },
+    {
+      "url": "/api/users/9",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 9,
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:54.787Z"
+    },
+    {
+      "url": "/api/users/10",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 10,
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+          }
+        }
+      },
+      "timestamp": "2018-08-18T13:36:55.088Z"
     }
   ]
 }

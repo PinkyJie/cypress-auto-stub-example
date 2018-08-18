@@ -23,11 +23,22 @@
     }
 
     function fetchClick() {
-      fetch('https://reqres.in/api/users/2')
-        .then(response => response.json())
-        .then(json => {
-          document.querySelector('#fetch-result').textContent = JSON.stringify(json);
+      let promise = Promise.resolve();
+      const MAX = 30;
+      for (let i = 1; i <= MAX; i++) {
+        promise = promise.then(() => {
+          const userId = i % 10 === 0 ? 10 : i % 10;
+          if (i === MAX) {
+            return fetch(`https://reqres.in/api/users/${userId}`)
+              .then(response => response.json())
+              .then(json => {
+                document.querySelector('#fetch-result').textContent = JSON.stringify(json);
+              });
+          }
+          return fetch(`https://reqres.in/api/users/${userId}`);
         });
+      }
+      return promise;
     }
 
     function createUserClick() {
@@ -51,14 +62,23 @@
 </head>
 
 <body>
+  <h2>Example 1: a single GET request using XHR</h2>
   <button id="xhr-btn" onclick="xhrClick()">Get Users(XHR)</button>
   <div id="xhr-result"></div>
 
-  <button id="fetch-btn" onclick="fetchClick()">Get Single User(fetch)</button>
-  <div id="fetch-result"></div>
-
+  <h2>Example 2: a single POST request using Fetch</h2>
   <button id="post-btn" onclick="createUserClick()">Create User(fetch)</button>
   <div id="post-result"></div>
+
+  <h2>Example 3: 30 sequential GET requests using Fetch</h2>
+  <p>
+    This is to simulate a series of requests which takes long time (around 14s) to finish.
+  </p>
+  <p>In your test, you can see how cy.waitUntilAllAPIFinished() handles this situation.</p>
+  <p>(Note: After all requests, only one user(userId: 10) will be displayed below.)
+  </p>
+  <button id="fetch-btn" onclick="fetchClick()">Get Single Users(fetch)</button>
+  <div id="fetch-result"></div>
 </body>
 
 </html>

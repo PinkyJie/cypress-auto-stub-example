@@ -4,6 +4,7 @@
   "env": {
     "autoRecordEnabled": false,
     "apiHost": "https://reqres.in",
-    "stubAPIPattern": "/api/.*"
+    "stubAPIPattern": "/api/.*",
+    "apiMaxWaitingTime": 60000
   }
 }

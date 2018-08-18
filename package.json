@@ -19,7 +19,7 @@
     "cy:open:record": "cypress open --env autoRecordEnabled=1",
     "cy:run": "cypress run",
     "serve": "http-server -p 3456",
-    "start": "concurrently \"npm run serve\" \"npm run cy:open\""
+    "start": "concurrently \"yarn serve\" \"yarn cy:open\""
   },
   "husky": {
     "hooks": {
