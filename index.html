@@ -30,15 +30,35 @@
         });
     }
 
+    function createUserClick() {
+      fetch('https://reqres.in/api/users', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: 'Cypress',
+          job: 'Tester',
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(response => response.json())
+        .then(json => {
+          document.querySelector('#post-result').textContent = JSON.stringify(json);
+        });
+    }
+
   </script>
 </head>
 
 <body>
-  <button id="xhr-btn" onclick="xhrClick()">Test XHR</button>
+  <button id="xhr-btn" onclick="xhrClick()">Get Users(XHR)</button>
   <div id="xhr-result"></div>
 
-  <button id="fetch-btn" onclick="fetchClick()">Test fetch</button>
+  <button id="fetch-btn" onclick="fetchClick()">Get Single User(fetch)</button>
   <div id="fetch-result"></div>
+
+  <button id="post-btn" onclick="createUserClick()">Create User(fetch)</button>
+  <div id="post-result"></div>
 </body>
 
 </html>

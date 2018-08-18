@@ -16,6 +16,7 @@
   },
   "scripts": {
     "cy:open": "cypress open",
+    "cy:open:record": "cypress open --env autoRecordEnabled=1",
     "cy:run": "cypress run",
     "serve": "http-server -p 3456",
     "start": "concurrently \"npm run serve\" \"npm run cy:open\""
@@ -26,7 +27,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,md}": [
+    "*.{js,ts,json,md}": [
       "prettier --write",
       "git add"
     ]

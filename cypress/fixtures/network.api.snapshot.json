@@ -1,0 +1,74 @@
+{
+  "Network test should show the user data": [
+    {
+      "url": "/api/users",
+      "method": "GET",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "page": 1,
+          "per_page": 3,
+          "total": 12,
+          "total_pages": 4,
+          "data": [
+            {
+              "id": 1,
+              "first_name": "George",
+              "last_name": "Bluth",
+              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+            },
+            {
+              "id": 2,
+              "first_name": "Janet",
+              "last_name": "Weaver",
+              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+            },
+            {
+              "id": 3,
+              "first_name": "Emma",
+              "last_name": "Wong",
+              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "url": "/api/users/2",
+      "method": "get",
+      "request": {
+        "body": null
+      },
+      "response": {
+        "body": {
+          "data": {
+            "id": 2,
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+          }
+        }
+      }
+    },
+    {
+      "url": "/api/users",
+      "method": "POST",
+      "request": {
+        "body": {
+          "name": "Cypress",
+          "job": "Tester"
+        }
+      },
+      "response": {
+        "body": {
+          "name": "Cypress",
+          "job": "Tester",
+          "id": "581",
+          "createdAt": "2018-08-18T08:02:36.298Z"
+        }
+      }
+    }
+  ]
+}
