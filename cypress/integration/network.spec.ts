@@ -1,9 +1,9 @@
 describe('Network test', function() {
-  it('should show the post data after "run" button is clicked', function() {
+  it('should show the user data', function() {
     cy.visit('/');
     cy.get('#xhr-btn').click();
-    cy.get('#xhr-result').should('contain', 'userId');
+    cy.get('#xhr-result').should('contain', 'George');
     cy.get('#fetch-btn').click();
-    cy.get('#fetch-result').should('contain', 'id');
+    cy.get('#fetch-result').should('contain', 'Janet');
   });
 });
