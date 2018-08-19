@@ -56,7 +56,7 @@ The website page we are testing in this project contains 3 examples:
 
 - Check the implementation for custom command `cy.waitUntilAllAPIFinished` in [`cypress/support/util.ts`](cypress/support/util.ts)
   1. maintain an internal counter for API calls: increase 1 when filing a new API request, decrease 1 when receiving a API response
-  2. use Cypress's (Automatic Retry Assertion)[https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Asserting-in-English] to regularly check this counter, block the testing until it equals to 0
+  2. use Cypress's [Automatic Retry Assertion](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Asserting-in-English) to regularly check this counter, block the testing until it equals to 0
 
 There are 4 new configuration parameters introduced in this example:
 
