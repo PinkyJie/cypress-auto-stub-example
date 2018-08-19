@@ -2,7 +2,11 @@
 
 This project is an example which shows how to automatically stub all API requests happened in your [Cypress](https://www.cypress.io/) test and how to record/replay them.
 
-## Problem to solve
+> We are available on [Cypress Dashboard](https://www.cypress.io/dashboard/), go [there](https://dashboard.cypress.io/#/projects/nf8wkk/runs) to check the running results. (Registration required)
+
+## Problems to solve
+
+**_1. E2E tests take a long time to run, they are too slow._**
 
 One concern of running E2E tests is that it takes long time to run, which makes sense because all your API calls are targeted to the real server. To resolve this issue, a single solution is to use mock API in your E2E tests. That's good, but here comes another question: you need to manually update your mocking data according to the API change regularly.
 
@@ -12,6 +16,10 @@ A better solution is:
 - Use the recorded API response to run your tests in future.
 
 This project demonstrates how to make this process more smoothly and automatically with Cypress.
+
+**_2. E2E tests are too flaky, how many seconds do I need to wait?_**
+
+Though Cypress already ships with a unique mechanism to automatically block your test and retry until your expectation meets, but sometimes you still need to explicitly wait for all network API calls to be finished. In this example we implement a new command called `waitUntilAllAPIFinished` to solve this problem. Thanks to Cypress's full network control ability, now it's easier to know how many network API calls are still pending, so that we can wait for them to be finished first before you do any assertion.
 
 ## Try it
 
