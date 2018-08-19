@@ -6,5 +6,6 @@
     "apiHost": "https://reqres.in",
     "stubAPIPattern": "/api/.*",
     "apiMaxWaitingTime": 60000
-  }
+  },
+  "projectId": "nf8wkk"
 }

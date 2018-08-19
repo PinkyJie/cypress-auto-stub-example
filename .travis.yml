@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 10
+cache:
+  directories:
+    - ~/.cache
+install:
+  - yarn install --frozen-lockfile
+script:
+  - yarn serve &
+  - yarn cy:run --record
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  - kill $(jobs -p) || true
