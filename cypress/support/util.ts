@@ -17,7 +17,8 @@ Cypress.Commands.add('waitUntilAllAPIFinished', () => {
    * basically you can get any element on page.
    */
   const timeout = Cypress.env('apiMaxWaitingTime') || 60 * 1000;
-  cy.get('body', { timeout }).should(() => {
+  cy.log('Waiting for pending API requests:');
+  cy.get('body', { timeout, log: false }).should(() => {
     expect(cy._apiCount).to.eq(0);
   });
 });

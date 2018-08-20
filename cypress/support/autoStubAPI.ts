@@ -36,11 +36,20 @@ beforeEach(function() {
   cy._apiData = [];
   cy._apiCount = 0;
   cy.server({
-    onRequest: (xhr: any) => {
+    onRequest: () => {
       cy._apiCount++;
     },
     onResponse: (xhr: any) => {
-      cy._apiCount--;
+      /**
+       * Sometimes there are some time windows between API requests, e.g. Request1 finishes,
+       * but Request2 starts after 100ms, in this case, cy.waitUntilAllAPIFinished() would
+       * not work correctly, so when we decrease the counter, we need to have a delay here.
+       */
+      const delayTime = isAutoStubEnabled ? 500 : 0;
+      setTimeout(() => {
+        cy._apiCount--;
+      }, delayTime);
+
       if (isAutoStubEnabled) {
         // save URL without the host info, because API host might be different between
         // Record and Replay session
