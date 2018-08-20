@@ -46,9 +46,13 @@ beforeEach(function() {
        * not work correctly, so when we decrease the counter, we need to have a delay here.
        */
       const delayTime = isAutoStubEnabled ? 500 : 0;
-      setTimeout(() => {
+      if (cy._apiCount === 1) {
+        setTimeout(() => {
+          cy._apiCount--;
+        }, delayTime);
+      } else {
         cy._apiCount--;
-      }, delayTime);
+      }
 
       if (isAutoStubEnabled) {
         // save URL without the host info, because API host might be different between
