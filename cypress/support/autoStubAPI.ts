@@ -105,8 +105,17 @@ afterEach(function() {
     const fixtureName = getFixtureName(testFileInfo);
     const fixturePath = `cypress/fixtures/${fixtureName}`;
     cy.log('API recorded', cy._apiData);
-    cy.writeFile(fixturePath, {
-      [testCaseTitle]: cy._apiData,
-    });
+    // if fixture file exists, only update the data related to this test case
+    const isFixtureExisted = cy.task('isFixtureExisted', fixturePath);
+    if (isFixtureExisted) {
+      cy.readFile(fixturePath).then((apiRecords: APISnapshotFixture) => {
+        apiRecords[testCaseTitle] = cy._apiData;
+        cy.writeFile(fixturePath, apiRecords);
+      });
+    } else {
+      cy.writeFile(fixturePath, {
+        [testCaseTitle]: cy._apiData,
+      });
+    }
   }
 });

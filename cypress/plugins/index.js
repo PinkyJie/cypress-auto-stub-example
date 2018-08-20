@@ -1,3 +1,4 @@
+const fs = require('fs');
 const wp = require('@cypress/webpack-preprocessor');
 
 module.exports = on => {
@@ -5,4 +6,9 @@ module.exports = on => {
     webpackOptions: require('../webpack.cypress.config'),
   };
   on('file:preprocessor', wp(options));
+  on('task', {
+    isFixtureExisted(filePath) {
+      return fs.existsSync(filePath);
+    },
+  });
 };
