@@ -20,6 +20,6 @@ declare namespace Cypress {
     _apiData: APIRecord[];
     _apiCount: number;
 
-    waitUntilAllAPIFinished: () => {};
+    waitUntilAllAPIFinished: () => void;
   }
 }

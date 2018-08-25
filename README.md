@@ -71,3 +71,9 @@ There are 4 new configuration parameters introduced in this example:
 | apiHost           | string                                     | URL for API endpoint                                                                                    | :white_check_mark: |               |
 | stubAPIPattern    | string (will be used in `new RegExp(xxx)`) | API pattern needs to be stubbed                                                                         | :white_check_mark: |               |
 | apiMaxWaitingTime | number (in milliseconds)                   | used by `cy.waitUntilAllAPIFinished`, the maximum time when we wait for all API requests to be finished |                    | 60000 (60s)   |
+
+## Known issue
+
+Currently when you use `cy.route()` to mock API response with fixtures, Cypress only match the URL and HTTP method you provided, for most of the cases, this is enough for mocking purpose. However, if you use libraries like `GraphQL`, all API requests are using the same URL with different request body, for this case, you need to mock different responses based on different request bodies, which is not possible before Cypress fixes [#687](https://github.com/cypress-io/cypress/issues/687).
+
+A simple workaround is: use `md5` or other hash library to hash your request body into a string, and put this string as a query parameter in your URL, like `?_md5=xxxx`, now your URL contains the request body information: different request bodies result in different md5 hash string, thus you can rely on URL and HTTP method to do API mocking with request body in consideration.
