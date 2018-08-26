@@ -32,7 +32,7 @@ Though Cypress already ships with a unique mechanism to automatically block your
 
 ## More details for demo
 
-The website page we are testing in this project contains 3 examples:
+The website page we are testing in this project contains 3 examples for XHR and Fetch:
 
 - Example 1:
   - Click a button to call API (GET https://reqres.in/api/users) using XHR. API response JSON will be displayed below after it returns.
@@ -43,9 +43,9 @@ The website page we are testing in this project contains 3 examples:
   - Click a button to call 30 **sequential** API (GET https://reqres.in/api/users/1 to https://reqres.in/api/users/10 for 3 times) using Fetch. API response JSON (`userId: 10`) will be displayed below after it returns. **sequential** here mean the 2nd API call will file only after the 1st API call returns.
   - To demonstrate the usage of a new custom command `cy.waitUntilAllAPIFinished()` which will make sure the testing is blocked until all API calls are finished.
 
-Currently when you use `cy.route()` to mock API response with fixtures, Cypress only match the URL and HTTP method you provided, for most of the cases, this is enough for mocking purpose. However, if you use libraries like `GraphQL`, all API requests are using the same URL with different request body, for this case, you need to mock different responses based on different request bodies, which is not possible before Cypress fixes [#687](https://github.com/cypress-io/cypress/issues/687). A simple workaround is: use `md5` or other hash library to hash your request body into a string, and put this string as a query parameter in your URL, like `?_md5=xxxx`, now your URL contains the request body information: different request bodies result in different md5 hash string, thus you can rely on URL and HTTP method to do API mocking with request body in consideration.
+It also includes 2 examples for GraphQL:
 
-Check a simple demonstration for testing with GraphQL [here](https://codesandbox.io/s/81q2nmry32).
+> Currently when you use `cy.route()` to mock API response with fixtures, Cypress only match the URL and HTTP method you provided, for most of the cases, this is enough for mocking purpose. However, if you use libraries like `GraphQL`, all API requests are using the same URL with different request body, for this case, you need to mock different responses based on different request bodies, which is not possible before Cypress fixes [#687](https://github.com/cypress-io/cypress/issues/687). A simple workaround is: use `md5` or other hash library to hash your request body into a string, and put this string as a query parameter in your URL, like `?_md5=xxxx`, now your URL contains the request body information: different request bodies result in different md5 hash string, thus you can rely on URL and HTTP method to do API mocking with request body in consideration.
 
 - Example 1:
   - Click a button to query all users (Query https://fakerql.com/) using GraphQL query. API response JSON will be displayed below after it returns.
@@ -64,8 +64,11 @@ Check a simple demonstration for testing with GraphQL [here](https://codesandbox
   4. while replaying, use `cy.fixture` to load API responses from the fixture file
 
 - Check the implementation for custom command `cy.waitUntilAllAPIFinished` in [`cypress/support/util.ts`](cypress/support/util.ts)
+
   1. maintain an internal counter for API calls: increase 1 when filing a new API request, decrease 1 when receiving a API response
   2. use Cypress's [Automatic Retry Assertion](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Asserting-in-English) to regularly check this counter, block the testing until it equals to 0
+
+- Check the custom URI configuration(adding `?md5=xxx`) for GraphQL in [`src/GraphQL.js`](src/GraphQL.js)
 
 There are 4 new configuration parameters introduced in this example:
 
@@ -74,9 +77,33 @@ There are 4 new configuration parameters introduced in this example:
 > - It's easier for overriding by `cypress open --env foo=bar`
 > - All existing configurations provided by Cypress are strongly typed, you can't add new configuration type when you use Typescript.
 
-| Parameter         | Type                                       | Description                                                                                             | Required           | Default Value |
-| ----------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------- | ------------------ | ------------- |
-| autoRecordEnabled | boolean                                    | enable auto record or not                                                                               |                    | false         |
-| apiHost           | string                                     | URL for API endpoint                                                                                    | :white_check_mark: |               |
-| stubAPIPattern    | string (will be used in `new RegExp(xxx)`) | API pattern needs to be stubbed                                                                         | :white_check_mark: |               |
-| apiMaxWaitingTime | number (in milliseconds)                   | used by `cy.waitUntilAllAPIFinished`, the maximum time when we wait for all API requests to be finished |                    | 60000 (60s)   |
+| Parameter         | Type                                                                          | Description                                                                                             | Required           | Default Value |
+| ----------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------ | ------------- |
+| autoRecordEnabled | boolean                                                                       | enable auto record or not                                                                               |                    | false         |
+| apiHosts          | string (multiple host separated by `,`)                                       | URL for API endpoint                                                                                    | :white_check_mark: |               |
+| stubAPIPatterns   | string (multiple pattern separated by `,`, will be used in `new RegExp(xxx)`) | API pattern needs to be stubbed                                                                         | :white_check_mark: |               |
+| apiMaxWaitingTime | number (in milliseconds)                                                      | used by `cy.waitUntilAllAPIFinished`, the maximum time when we wait for all API requests to be finished |                    | 60000 (60s)   |
+
+> Note: `apiHosts` and `stubAPIPatterns` must be aligned with each others.
+
+The generated recording file inside `cypress/fixtures` folder has the following format.
+
+```javascript
+{
+  "Test case name": {
+    "timestamp": "2018-08-26T07:27:00.582Z",
+    "records": [
+      "url": "xxx",
+      "method": "xxx",
+      "request": {
+        "body": {},
+      },
+      "response": {
+        "body": {},
+      },
+      // this means which host/pattern this API matches
+      "matchHostIndex": 0,
+    ]
+  }
+}
+```
