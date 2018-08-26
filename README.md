@@ -30,7 +30,7 @@ Though Cypress already ships with a unique mechanism to automatically block your
 - Close Cypress and re-run it without recording: `yarn cy:open`, this time you can see the whole test runs very fast, because all API are stubbed and use the fixture file as responses.
 - You can also use `yarn cy:run` to run all Cypress tests in headless mode.
 
-## More details for demo
+## More details for demo [![Edit cypress-auto-stub-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/PinkyJie/cypress-auto-stub-example/tree/master/)
 
 The website page we are testing in this project contains 3 examples for XHR and Fetch:
 
