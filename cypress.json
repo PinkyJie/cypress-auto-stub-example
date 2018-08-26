@@ -3,8 +3,8 @@
   "supportFile": "cypress/support/index.ts",
   "env": {
     "autoRecordEnabled": false,
-    "apiHost": "https://reqres.in",
-    "stubAPIPattern": "/api/.*",
+    "apiHosts": "https://reqres.in, https://fakerql.com/",
+    "stubAPIPatterns": "/api/.*, /graphql.*",
     "apiMaxWaitingTime": 60000
   },
   "projectId": "nf8wkk"

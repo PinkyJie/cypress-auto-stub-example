@@ -7,11 +7,14 @@ interface APIRecord {
   response: {
     body: any;
   };
-  timestamp: string;
+  matchHostIndex: number;
 }
 
 interface APISnapshotFixture {
-  [testCaseName: string]: APIRecord[];
+  [testCaseName: string]: {
+    timestamp: string;
+    records: APIRecord[];
+  };
 }
 
 declare namespace Cypress {

@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "Example project to demonstrate how to record/replay API with Cypress.",
   "license": "MIT",
+  "dependencies": {
+    "apollo-boost": "^0.1.14",
+    "blueimp-md5": "^2.10.0",
+    "graphql": "^0.13.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
+  },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^2.0.1",
     "concurrently": "^3.6.1",
@@ -18,8 +26,9 @@
     "cy:open": "cypress open",
     "cy:open:record": "cypress open --env autoRecordEnabled=1",
     "cy:run": "cypress run",
-    "serve": "http-server -p 3456",
-    "start": "concurrently \"yarn serve\" \"yarn cy:open\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "serve": "http-server -p 3456 ./build"
   },
   "husky": {
     "hooks": {

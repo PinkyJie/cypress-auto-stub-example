@@ -43,6 +43,15 @@ The website page we are testing in this project contains 3 examples:
   - Click a button to call 30 **sequential** API (GET https://reqres.in/api/users/1 to https://reqres.in/api/users/10 for 3 times) using Fetch. API response JSON (`userId: 10`) will be displayed below after it returns. **sequential** here mean the 2nd API call will file only after the 1st API call returns.
   - To demonstrate the usage of a new custom command `cy.waitUntilAllAPIFinished()` which will make sure the testing is blocked until all API calls are finished.
 
+Currently when you use `cy.route()` to mock API response with fixtures, Cypress only match the URL and HTTP method you provided, for most of the cases, this is enough for mocking purpose. However, if you use libraries like `GraphQL`, all API requests are using the same URL with different request body, for this case, you need to mock different responses based on different request bodies, which is not possible before Cypress fixes [#687](https://github.com/cypress-io/cypress/issues/687). A simple workaround is: use `md5` or other hash library to hash your request body into a string, and put this string as a query parameter in your URL, like `?_md5=xxxx`, now your URL contains the request body information: different request bodies result in different md5 hash string, thus you can rely on URL and HTTP method to do API mocking with request body in consideration.
+
+Check a simple demonstration for testing with GraphQL [here](https://codesandbox.io/s/81q2nmry32).
+
+- Example 1:
+  - Click a button to query all users (Query https://fakerql.com/) using GraphQL query. API response JSON will be displayed below after it returns.
+- Example 2:
+  - Click a button to login and update a specific user (Mutation https://fakerql.com/) using GraphQL mutation. API response JSON will be displayed below after it returns.
+
 ## More detail for implementation
 
 > Inspired by [this article](https://medium.com/ax2-inc/dynamic-xhr-responses-recording-stubbing-with-cypress-9257d4f730cd) and Jest snapshot testing.
@@ -71,9 +80,3 @@ There are 4 new configuration parameters introduced in this example:
 | apiHost           | string                                     | URL for API endpoint                                                                                    | :white_check_mark: |               |
 | stubAPIPattern    | string (will be used in `new RegExp(xxx)`) | API pattern needs to be stubbed                                                                         | :white_check_mark: |               |
 | apiMaxWaitingTime | number (in milliseconds)                   | used by `cy.waitUntilAllAPIFinished`, the maximum time when we wait for all API requests to be finished |                    | 60000 (60s)   |
-
-## Known issue
-
-Currently when you use `cy.route()` to mock API response with fixtures, Cypress only match the URL and HTTP method you provided, for most of the cases, this is enough for mocking purpose. However, if you use libraries like `GraphQL`, all API requests are using the same URL with different request body, for this case, you need to mock different responses based on different request bodies, which is not possible before Cypress fixes [#687](https://github.com/cypress-io/cypress/issues/687).
-
-A simple workaround is: use `md5` or other hash library to hash your request body into a string, and put this string as a query parameter in your URL, like `?_md5=xxxx`, now your URL contains the request body information: different request bodies result in different md5 hash string, thus you can rely on URL and HTTP method to do API mocking with request body in consideration.

@@ -12,5 +12,13 @@ describe('Network test', function() {
     cy.get('#fetch-btn').click();
     cy.waitUntilAllAPIFinished();
     cy.get('#fetch-result').should('contain', '"id":10');
+
+    // query all users
+    cy.get('#graphql-query-btn').click();
+    cy.get('#graphql-query-result').should('contain', 'firstName');
+    // update a user
+    cy.get('#graphql-mutation-btn').click();
+    cy.waitUntilAllAPIFinished();
+    cy.get('#graphql-mutation-result').should('contain', 'Cypress');
   });
 });

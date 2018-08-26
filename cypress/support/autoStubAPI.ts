@@ -57,7 +57,18 @@ beforeEach(function() {
       if (isAutoStubEnabled) {
         // save URL without the host info, because API host might be different between
         // Record and Replay session
-        const url = xhr.url.replace(Cypress.env('apiHost'), '');
+        let url = '';
+        let matchHostIndex: number = -1;
+        const apiHosts = Cypress.env('apiHosts').split(',');
+        for (let i = 0; i < apiHosts.length; i++) {
+          const host = apiHosts[i].trim();
+          if (xhr.url.includes(host)) {
+            url = xhr.url.replace(host, '');
+            matchHostIndex = i;
+            break;
+          }
+        }
+
         const method = xhr.method;
         const request = {
           body: xhr.request.body,
@@ -71,26 +82,32 @@ beforeEach(function() {
           method,
           request,
           response,
-          timestamp: new Date().toJSON(),
+          matchHostIndex,
         });
       }
     },
   });
 
   if (isAutoStubEnabled) {
-    const stubAPIPattern = new RegExp(Cypress.env('stubAPIPattern'));
-    // let Cypress stub all API requests which match the pattern defined in cypress.json
-    cy.route('GET', stubAPIPattern);
-    cy.route('POST', stubAPIPattern);
-    cy.route('PUT', stubAPIPattern);
-    cy.route('DELETE', stubAPIPattern);
+    const stubAPIPatterns = Cypress.env('stubAPIPatterns').split(',');
+    stubAPIPatterns.forEach((pattern: string) => {
+      const apiRegex = new RegExp(pattern.trim());
+      // let Cypress stub all API requests which match the pattern defined in cypress.json
+      cy.route('GET', apiRegex);
+      cy.route('POST', apiRegex);
+      cy.route('PUT', apiRegex);
+      cy.route('DELETE', apiRegex);
+    });
   } else {
     const testFileInfo = Cypress.spec;
     const testCaseTitle = this.currentTest.fullTitle();
     const fixtureName = getFixtureName(testFileInfo);
+    const apiHosts = Cypress.env('apiHosts').split(',');
     cy.fixture(fixtureName).then((apiRecords: APISnapshotFixture) => {
-      apiRecords[testCaseTitle].forEach(apiRecord => {
-        const fullUrl = `${Cypress.env('apiHost')}${apiRecord.url}`;
+      apiRecords[testCaseTitle].records.forEach(apiRecord => {
+        const fullUrl = `${apiHosts[apiRecord.matchHostIndex].trim()}${
+          apiRecord.url
+        }`;
         cy.route(apiRecord.method, fullUrl, apiRecord.response.body);
       });
     });
@@ -106,16 +123,23 @@ afterEach(function() {
     const fixturePath = `cypress/fixtures/${fixtureName}`;
     cy.log('API recorded', cy._apiData);
     // if fixture file exists, only update the data related to this test case
-    const isFixtureExisted = cy.task('isFixtureExisted', fixturePath);
-    if (isFixtureExisted) {
-      cy.readFile(fixturePath).then((apiRecords: APISnapshotFixture) => {
-        apiRecords[testCaseTitle] = cy._apiData;
-        cy.writeFile(fixturePath, apiRecords);
-      });
-    } else {
-      cy.writeFile(fixturePath, {
-        [testCaseTitle]: cy._apiData,
-      });
-    }
+    cy.task('isFixtureExisted', fixturePath).then(isFixtureExisted => {
+      if (isFixtureExisted) {
+        cy.readFile(fixturePath).then((apiRecords: APISnapshotFixture) => {
+          apiRecords[testCaseTitle] = {
+            timestamp: new Date().toJSON(),
+            records: cy._apiData,
+          };
+          cy.writeFile(fixturePath, apiRecords);
+        });
+      } else {
+        cy.writeFile(fixturePath, {
+          [testCaseTitle]: {
+            timestamp: new Date().toDateString(),
+            records: cy._apiData,
+          },
+        });
+      }
+    });
   }
 });
