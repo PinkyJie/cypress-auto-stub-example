@@ -26,8 +26,11 @@ Though Cypress already ships with a unique mechanism to automatically block your
 - Clone this project.
 - Install all dependencies by `yarn install` or `npm install`.
 - Launch a website by `yarn serve` or `npm run serve`.
-- Opn Cypress in recording mode: `yarn cy:open:record`, after running the test `network.spec.ts`, a snapshot file containing all API responses will be generated in `fixture` folder.
-- Close Cypress and re-run it without recording: `yarn cy:open`, this time you can see the whole test runs very fast, because all API are stubbed and use the fixture file as responses.
+- Opn Cypress: `yarn cy:open`, then run the test `network.spec.ts`: (the same mechanism as Jest snapshot testing)
+  - if a snapshot file is not existed inside `fixture` folder, tests will be running with the real API, and after all tests are passed, a snapshot file containing all API responses will be generated in `fixture` folder.
+  - if a snapshot file is existed inside `fixture` folder, but fixture data for this test case is not existed(e.g. there is no key with the same name as test case name existed inside that snapshot file), tests will be running with the real API, then the snapshot file will be updated with the recorded API responses.
+  - if a snapshot file in `fixture` folder is already existed and has the mocking data for this test case, you can see the whole test runs very fast, because all APIs are stubbed and use the snapshot file as responses.
+- If you want to update the snapshot file regardless of the existing fixture file existence, use `yarn cy:open:record`, all tests will always be running with the real API, and all recorded API will override the existing snapshot file if it is existed.
 - You can also use `yarn cy:run` to run all Cypress tests in headless mode.
 
 ## More details for demo [![Edit cypress-auto-stub-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/PinkyJie/cypress-auto-stub-example/tree/master/)
@@ -79,7 +82,7 @@ There are 4 new configuration parameters introduced in this example:
 
 | Parameter         | Type                                                                          | Description                                                                                             | Required           | Default Value |
 | ----------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------ | ------------- |
-| autoRecordEnabled | boolean                                                                       | enable auto record or not                                                                               |                    | false         |
+| forceAPIRecording | boolean                                                                       | force enabling auto record (used to update api mocking data)                                            |                    | false         |
 | apiHosts          | string (multiple host separated by `,`)                                       | URL for API endpoint                                                                                    | :white_check_mark: |               |
 | stubAPIPatterns   | string (multiple pattern separated by `,`, will be used in `new RegExp(xxx)`) | API pattern needs to be stubbed                                                                         | :white_check_mark: |               |
 | apiMaxWaitingTime | number (in milliseconds)                                                      | used by `cy.waitUntilAllAPIFinished`, the maximum time when we wait for all API requests to be finished |                    | 60000 (60s)   |

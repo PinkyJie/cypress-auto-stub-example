@@ -22,6 +22,7 @@ declare namespace Cypress {
   interface Chainable {
     _apiData: APIRecord[];
     _apiCount: number;
+    _isInRecordingMode: boolean;
 
     waitUntilAllAPIFinished: () => void;
   }

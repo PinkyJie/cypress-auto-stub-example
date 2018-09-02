@@ -24,7 +24,7 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:open:record": "cypress open --env autoRecordEnabled=1",
+    "cy:open:record": "cypress open --env forceAPIRecording=1",
     "cy:run": "cypress run",
     "start": "react-scripts start",
     "build": "react-scripts build",
