@@ -1,6 +1,6 @@
 {
   "Network test should show the user data": {
-    "timestamp": "Sun Sep 02 2018",
+    "timestamp": "2018-09-10T11:44:28.596Z",
     "records": [
       {
         "url": "/api/users",
@@ -51,8 +51,8 @@
           "body": {
             "name": "Cypress",
             "job": "Tester",
-            "id": "330",
-            "createdAt": "2018-09-02T12:22:24.096Z"
+            "id": "866",
+            "createdAt": "2018-09-10T11:46:15.873Z"
           }
         },
         "matchHostIndex": 0
@@ -614,24 +614,24 @@
             "data": {
               "users": [
                 {
-                  "id": "cjlktqvz7000j2810rjwsm5uw",
-                  "firstName": "Kim",
-                  "lastName": "Kautzer",
-                  "email": "Joanny26@gmail.com",
+                  "id": "cjlw7z55e00062810eat5bvhw",
+                  "firstName": "Camilla",
+                  "lastName": "Kris",
+                  "email": "Werner92@yahoo.com",
                   "__typename": "User"
                 },
                 {
-                  "id": "cjlktqvz8000k2810qg1sjmea",
-                  "firstName": "Concepcion",
-                  "lastName": "Schoen",
-                  "email": "Adrien_Veum@yahoo.com",
+                  "id": "cjlw7z55e00072810oq5fh0b2",
+                  "firstName": "Major",
+                  "lastName": "Grimes",
+                  "email": "Wilton_Mayert@hotmail.com",
                   "__typename": "User"
                 },
                 {
-                  "id": "cjlktqvz8000l2810bf6mq63x",
-                  "firstName": "Sandrine",
-                  "lastName": "Cartwright",
-                  "email": "Issac_Kautzer@hotmail.com",
+                  "id": "cjlw7z55e000828100jo8qvak",
+                  "firstName": "Sage",
+                  "lastName": "Sanford",
+                  "email": "Arlene95@hotmail.com",
                   "__typename": "User"
                 }
               ]
@@ -657,7 +657,7 @@
           "body": {
             "data": {
               "login": {
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImN5cHJlc3NAeHh4IiwidXNlcklkIjoiY2psa3Rxd2IwMDAwbTI4MTBjc2dscGsyMCIsImlhdCI6MTUzNTg5MDgzNCwiZXhwIjoxNTM2MDYzNjM0fQ.PpOniiLU7RcYbT_BxZj3uTnDjSSq0Lwpp3TnMFlqEVA",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImN5cHJlc3NAeHh4IiwidXNlcklkIjoiY2psdzd6NWhtMDAwOTI4MTA3eGlrNTh3ciIsImlhdCI6MTUzNjU3OTg2MSwiZXhwIjoxNTM2NzUyNjYxfQ.IV2njXVRcq7FX5Grfksu5-4KkBrcvkHpahKmu8BBf6Y",
                 "__typename": "AuthPayload"
               }
             }
@@ -666,13 +666,13 @@
         "matchHostIndex": 1
       },
       {
-        "url": "graphql?_md5=0cbf2b11c65d7de35dec14c09e890fed",
+        "url": "graphql?_md5=44a9c2a1ff80034a427604ce8c87925f",
         "method": "POST",
         "request": {
           "body": {
             "operationName": "UpdateUser",
             "variables": {
-              "id": "cjlktqvz7000j2810rjwsm5uw",
+              "id": "cjlw7z55e00062810eat5bvhw",
               "firstName": "Cypress",
               "lastName": "Test"
             },
@@ -683,10 +683,10 @@
           "body": {
             "data": {
               "updateUser": {
-                "id": "cjlktqwb0000m2810csglpk20",
+                "id": "cjlw7z5hm000928107xik58wr",
                 "firstName": "Cypress",
                 "lastName": "Test",
-                "email": "Marilyne.Bednar@yahoo.com",
+                "email": "Philip84@hotmail.com",
                 "__typename": "User"
               }
             }

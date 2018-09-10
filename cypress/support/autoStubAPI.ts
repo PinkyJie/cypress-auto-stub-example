@@ -182,7 +182,7 @@ afterEach(function() {
             fixturePath,
             {
               [testCaseTitle]: {
-                timestamp: new Date().toDateString(),
+                timestamp: new Date().toJSON(),
                 records: cy._apiData,
               },
             },
