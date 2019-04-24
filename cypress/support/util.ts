@@ -1,5 +1,5 @@
 /**
- * Block the test and wait for all API calls to finished.
+ * Block the test and wait for all API calls to finish.
  *
  * We have a counter in cy.server()'s onRequest/onResponse callback, every time we send out
  * an API request, we increase the counter by 1, every time we receive a response, we decrease
