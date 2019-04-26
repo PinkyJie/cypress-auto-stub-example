@@ -26,7 +26,7 @@ Though Cypress already ships with a unique mechanism to automatically block your
 - Clone this project.
 - Install all dependencies by `yarn install` or `npm install`.
 - Launch a website by `yarn serve` or `npm run serve`.
-- Opn Cypress: `yarn cy:open`, then run the test `network.spec.ts`: (the same mechanism as Jest snapshot testing)
+- Open Cypress: `yarn cy:open`, then run the test `network.spec.ts`: (the same mechanism as Jest snapshot testing)
   - if a snapshot file is not existed inside `fixture` folder, tests will be running with the real API, and after all tests are passed, a snapshot file containing all API responses will be generated in `fixture` folder.
   - if a snapshot file is existed inside `fixture` folder, but fixture data for this test case is not existed(e.g. there is no key with the same name as test case name existed inside that snapshot file), tests will be running with the real API, then the snapshot file will be updated with the recorded API responses.
   - if a snapshot file in `fixture` folder is already existed and has the mocking data for this test case, you can see the whole test runs very fast, because all APIs are stubbed and use the snapshot file as responses.
