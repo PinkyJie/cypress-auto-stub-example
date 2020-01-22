@@ -24,13 +24,13 @@ Though Cypress already ships with a unique mechanism to automatically block your
 ## Try it
 
 - Clone this project.
-- Install all dependencies by `yarn install` or `npm install`.
-- Launch a website by `yarn serve` or `npm run serve`.
-- Open Cypress: `yarn cy:open`, then run the test `network.spec.ts`: (the same mechanism as Jest snapshot testing)
-  - if a snapshot file is not existed inside `fixture` folder, tests will be running with the real API, and after all tests are passed, a snapshot file containing all API responses will be generated in `fixture` folder.
-  - if a snapshot file is existed inside `fixture` folder, but fixture data for this test case is not existed(e.g. there is no key with the same name as test case name existed inside that snapshot file), tests will be running with the real API, then the snapshot file will be updated with the recorded API responses.
-  - if a snapshot file in `fixture` folder is already existed and has the mocking data for this test case, you can see the whole test runs very fast, because all APIs are stubbed and use the snapshot file as responses.
-- If you want to update the snapshot file regardless of the existing fixture file existence, use `yarn cy:open:record`, all tests will always be running with the real API, and all recorded API will override the existing snapshot file if it is existed.
+- Install all dependencies by running `yarn install` or `npm install`.
+- Launch a website by running `yarn serve` or `npm run serve`.
+- Open Cypress byr running `yarn cy:open`, then run the test `network.spec.ts`: (the same mechanism as Jest snapshot testing)
+  - If a snapshot file does not exist inside the `fixture` folder, tests will be running with the real API, and after all tests are passed, a snapshot file containing all API responses will be generated in the `fixture` folder.
+  - If a snapshot file does exist inside the `fixture` folder, but fixture data for this test case does not exist (e.g. there is no key with the same name as the test case name existing inside that snapshot file), tests will be running with the real API, then the snapshot file will be updated with the recorded API responses.
+  - If a snapshot file in the `fixture` folder already exists and has the mocking data for this test case, the test should run very fast, because all API responses are stubbed and use the snapshot file as responses.
+- If you want to update the snapshot file regardless of the existing fixture file existence, use `yarn cy:open:record`.  When using this command, all tests will run against the real API, and all returned API responses will override the existing snapshot file if it exists.
 - You can also use `yarn cy:run` to run all Cypress tests in headless mode.
 
 ## More details for demo [![Edit cypress-auto-stub-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/PinkyJie/cypress-auto-stub-example/tree/master/)
