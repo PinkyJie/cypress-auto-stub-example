@@ -25,18 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Setup yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      - uses: actions/cache@v2
+        id: node-modules-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Setup node
         uses: actions/setup-node@v2.1.5
@@ -45,6 +38,7 @@ jobs:
           check-latest: true
 
       - name: Install dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
       - name: Build and serve
@@ -53,16 +47,15 @@ jobs:
           yarn serve &
 
       - name: Run Cypress test
+        id: run-cypress
         run: yarn cy:run --browser chrome
+        continue-on-error: true
 
       - name: Upload Cypress failed results
-        if: ${{ always() }}
+        if: steps.run-cypress.outcome != 'success'
         uses: actions/upload-artifact@v2.2.3
         with:
           name: cypress-failed
           path: |
             cypress/videos
             cypress/screenshots
-
-      - name: Cleanup
-        run: kill $(jobs -p) || true

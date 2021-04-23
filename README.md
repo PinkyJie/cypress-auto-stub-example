@@ -1,4 +1,4 @@
-# cypress-auto-stub-example [![Build Status](https://travis-ci.org/PinkyJie/cypress-auto-stub-example.svg?branch=master)](https://travis-ci.org/PinkyJie/cypress-auto-stub-example)
+# cypress-auto-stub-example [![CI](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml)
 
 This project is an example which shows how to automatically stub all API requests happened in your [Cypress](https://www.cypress.io/) test and how to record/replay them.
 
