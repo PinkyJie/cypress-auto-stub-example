@@ -1,39 +1,67 @@
 {
   "Network test should show the user data": {
-    "timestamp": "2018-09-10T11:44:28.596Z",
+    "timestamp": "2021-04-23T13:45:03.341Z",
     "records": [
       {
         "url": "/api/users",
         "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "page": 1,
-            "per_page": 3,
+            "per_page": 6,
             "total": 12,
-            "total_pages": 4,
+            "total_pages": 2,
             "data": [
               {
                 "id": 1,
+                "email": "george.bluth@reqres.in",
                 "first_name": "George",
                 "last_name": "Bluth",
-                "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+                "avatar": "https://reqres.in/img/faces/1-image.jpg"
               },
               {
                 "id": 2,
+                "email": "janet.weaver@reqres.in",
                 "first_name": "Janet",
                 "last_name": "Weaver",
-                "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+                "avatar": "https://reqres.in/img/faces/2-image.jpg"
               },
               {
                 "id": 3,
+                "email": "emma.wong@reqres.in",
                 "first_name": "Emma",
                 "last_name": "Wong",
-                "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+                "avatar": "https://reqres.in/img/faces/3-image.jpg"
+              },
+              {
+                "id": 4,
+                "email": "eve.holt@reqres.in",
+                "first_name": "Eve",
+                "last_name": "Holt",
+                "avatar": "https://reqres.in/img/faces/4-image.jpg"
+              },
+              {
+                "id": 5,
+                "email": "charles.morris@reqres.in",
+                "first_name": "Charles",
+                "last_name": "Morris",
+                "avatar": "https://reqres.in/img/faces/5-image.jpg"
+              },
+              {
+                "id": 6,
+                "email": "tracey.ramos@reqres.in",
+                "first_name": "Tracey",
+                "last_name": "Ramos",
+                "avatar": "https://reqres.in/img/faces/6-image.jpg"
               }
-            ]
+            ],
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+            }
           }
         },
         "matchHostIndex": 0
@@ -51,25 +79,30 @@
           "body": {
             "name": "Cypress",
             "job": "Tester",
-            "id": "866",
-            "createdAt": "2018-09-10T11:46:15.873Z"
+            "id": "251",
+            "createdAt": "2021-04-23T13:44:58.937Z"
           }
         },
         "matchHostIndex": 0
       },
       {
         "url": "/api/users/1",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 1,
+              "email": "george.bluth@reqres.in",
               "first_name": "George",
               "last_name": "Bluth",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+              "avatar": "https://reqres.in/img/faces/1-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -77,17 +110,22 @@
       },
       {
         "url": "/api/users/2",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 2,
+              "email": "janet.weaver@reqres.in",
               "first_name": "Janet",
               "last_name": "Weaver",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+              "avatar": "https://reqres.in/img/faces/2-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -95,17 +133,22 @@
       },
       {
         "url": "/api/users/3",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 3,
+              "email": "emma.wong@reqres.in",
               "first_name": "Emma",
               "last_name": "Wong",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+              "avatar": "https://reqres.in/img/faces/3-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -113,17 +156,22 @@
       },
       {
         "url": "/api/users/4",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 4,
+              "email": "eve.holt@reqres.in",
               "first_name": "Eve",
               "last_name": "Holt",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+              "avatar": "https://reqres.in/img/faces/4-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -131,17 +179,22 @@
       },
       {
         "url": "/api/users/5",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 5,
+              "email": "charles.morris@reqres.in",
               "first_name": "Charles",
               "last_name": "Morris",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+              "avatar": "https://reqres.in/img/faces/5-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -149,17 +202,22 @@
       },
       {
         "url": "/api/users/6",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 6,
+              "email": "tracey.ramos@reqres.in",
               "first_name": "Tracey",
               "last_name": "Ramos",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+              "avatar": "https://reqres.in/img/faces/6-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -167,17 +225,22 @@
       },
       {
         "url": "/api/users/7",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 7,
+              "email": "michael.lawson@reqres.in",
               "first_name": "Michael",
               "last_name": "Lawson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+              "avatar": "https://reqres.in/img/faces/7-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -185,17 +248,22 @@
       },
       {
         "url": "/api/users/8",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 8,
+              "email": "lindsay.ferguson@reqres.in",
               "first_name": "Lindsay",
               "last_name": "Ferguson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+              "avatar": "https://reqres.in/img/faces/8-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -203,17 +271,22 @@
       },
       {
         "url": "/api/users/9",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 9,
+              "email": "tobias.funke@reqres.in",
               "first_name": "Tobias",
               "last_name": "Funke",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+              "avatar": "https://reqres.in/img/faces/9-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -221,17 +294,22 @@
       },
       {
         "url": "/api/users/10",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 10,
+              "email": "byron.fields@reqres.in",
               "first_name": "Byron",
               "last_name": "Fields",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+              "avatar": "https://reqres.in/img/faces/10-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -239,17 +317,22 @@
       },
       {
         "url": "/api/users/1",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 1,
+              "email": "george.bluth@reqres.in",
               "first_name": "George",
               "last_name": "Bluth",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+              "avatar": "https://reqres.in/img/faces/1-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -257,17 +340,22 @@
       },
       {
         "url": "/api/users/2",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 2,
+              "email": "janet.weaver@reqres.in",
               "first_name": "Janet",
               "last_name": "Weaver",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+              "avatar": "https://reqres.in/img/faces/2-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -275,17 +363,22 @@
       },
       {
         "url": "/api/users/3",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 3,
+              "email": "emma.wong@reqres.in",
               "first_name": "Emma",
               "last_name": "Wong",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+              "avatar": "https://reqres.in/img/faces/3-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -293,17 +386,22 @@
       },
       {
         "url": "/api/users/4",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 4,
+              "email": "eve.holt@reqres.in",
               "first_name": "Eve",
               "last_name": "Holt",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+              "avatar": "https://reqres.in/img/faces/4-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -311,17 +409,22 @@
       },
       {
         "url": "/api/users/5",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 5,
+              "email": "charles.morris@reqres.in",
               "first_name": "Charles",
               "last_name": "Morris",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+              "avatar": "https://reqres.in/img/faces/5-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -329,17 +432,22 @@
       },
       {
         "url": "/api/users/6",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 6,
+              "email": "tracey.ramos@reqres.in",
               "first_name": "Tracey",
               "last_name": "Ramos",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+              "avatar": "https://reqres.in/img/faces/6-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -347,17 +455,22 @@
       },
       {
         "url": "/api/users/7",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 7,
+              "email": "michael.lawson@reqres.in",
               "first_name": "Michael",
               "last_name": "Lawson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+              "avatar": "https://reqres.in/img/faces/7-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -365,17 +478,22 @@
       },
       {
         "url": "/api/users/8",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 8,
+              "email": "lindsay.ferguson@reqres.in",
               "first_name": "Lindsay",
               "last_name": "Ferguson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+              "avatar": "https://reqres.in/img/faces/8-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -383,17 +501,22 @@
       },
       {
         "url": "/api/users/9",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 9,
+              "email": "tobias.funke@reqres.in",
               "first_name": "Tobias",
               "last_name": "Funke",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+              "avatar": "https://reqres.in/img/faces/9-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -401,17 +524,22 @@
       },
       {
         "url": "/api/users/10",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 10,
+              "email": "byron.fields@reqres.in",
               "first_name": "Byron",
               "last_name": "Fields",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+              "avatar": "https://reqres.in/img/faces/10-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -419,17 +547,22 @@
       },
       {
         "url": "/api/users/1",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 1,
+              "email": "george.bluth@reqres.in",
               "first_name": "George",
               "last_name": "Bluth",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+              "avatar": "https://reqres.in/img/faces/1-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -437,17 +570,22 @@
       },
       {
         "url": "/api/users/2",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 2,
+              "email": "janet.weaver@reqres.in",
               "first_name": "Janet",
               "last_name": "Weaver",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+              "avatar": "https://reqres.in/img/faces/2-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -455,17 +593,22 @@
       },
       {
         "url": "/api/users/3",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 3,
+              "email": "emma.wong@reqres.in",
               "first_name": "Emma",
               "last_name": "Wong",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+              "avatar": "https://reqres.in/img/faces/3-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -473,17 +616,22 @@
       },
       {
         "url": "/api/users/4",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 4,
+              "email": "eve.holt@reqres.in",
               "first_name": "Eve",
               "last_name": "Holt",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+              "avatar": "https://reqres.in/img/faces/4-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -491,17 +639,22 @@
       },
       {
         "url": "/api/users/5",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 5,
+              "email": "charles.morris@reqres.in",
               "first_name": "Charles",
               "last_name": "Morris",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+              "avatar": "https://reqres.in/img/faces/5-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -509,17 +662,22 @@
       },
       {
         "url": "/api/users/6",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 6,
+              "email": "tracey.ramos@reqres.in",
               "first_name": "Tracey",
               "last_name": "Ramos",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+              "avatar": "https://reqres.in/img/faces/6-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -527,17 +685,22 @@
       },
       {
         "url": "/api/users/7",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 7,
+              "email": "michael.lawson@reqres.in",
               "first_name": "Michael",
               "last_name": "Lawson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+              "avatar": "https://reqres.in/img/faces/7-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -545,17 +708,22 @@
       },
       {
         "url": "/api/users/8",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 8,
+              "email": "lindsay.ferguson@reqres.in",
               "first_name": "Lindsay",
               "last_name": "Ferguson",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+              "avatar": "https://reqres.in/img/faces/8-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -563,17 +731,22 @@
       },
       {
         "url": "/api/users/9",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 9,
+              "email": "tobias.funke@reqres.in",
               "first_name": "Tobias",
               "last_name": "Funke",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+              "avatar": "https://reqres.in/img/faces/9-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
@@ -581,32 +754,37 @@
       },
       {
         "url": "/api/users/10",
-        "method": "get",
+        "method": "GET",
         "request": {
-          "body": null
+          "body": ""
         },
         "response": {
           "body": {
             "data": {
               "id": 10,
+              "email": "byron.fields@reqres.in",
               "first_name": "Byron",
               "last_name": "Fields",
-              "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+              "avatar": "https://reqres.in/img/faces/10-image.jpg"
+            },
+            "support": {
+              "url": "https://reqres.in/#support-heading",
+              "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
             }
           }
         },
         "matchHostIndex": 0
       },
       {
-        "url": "graphql?_md5=f101522a2ab965d047a8fc5b576981e7",
+        "url": "/graphql?_md5=2a6e3479341000a82c00a3e262d00959",
         "method": "POST",
         "request": {
           "body": {
             "operationName": "AllUsers",
             "variables": {
-              "count": 3
+              "limit": 10
             },
-            "query": "query AllUsers($count: Int!) {\n  users: allUsers(count: $count) {\n    id\n    firstName\n    lastName\n    email\n    __typename\n  }\n}\n"
+            "query": "query AllUsers($limit: Int!) {\n  users(limit: $limit) {\n    id\n    name\n    timestamp\n    __typename\n  }\n}\n"
           }
         },
         "response": {
@@ -614,25 +792,64 @@
             "data": {
               "users": [
                 {
-                  "id": "cjlw7z55e00062810eat5bvhw",
-                  "firstName": "Camilla",
-                  "lastName": "Kris",
-                  "email": "Werner92@yahoo.com",
-                  "__typename": "User"
+                  "id": "5c188401-b4a3-4b66-a0d2-e66f3ccfdc5f",
+                  "name": "sfdsf",
+                  "timestamp": "2021-04-23T12:50:42.07137+00:00",
+                  "__typename": "users"
                 },
                 {
-                  "id": "cjlw7z55e00072810oq5fh0b2",
-                  "firstName": "Major",
-                  "lastName": "Grimes",
-                  "email": "Wilton_Mayert@hotmail.com",
-                  "__typename": "User"
+                  "id": "71089b38-6fad-4efc-aedc-344681dc57d2",
+                  "name": "name16630",
+                  "timestamp": "2021-04-23T13:07:56.226828+00:00",
+                  "__typename": "users"
                 },
                 {
-                  "id": "cjlw7z55e000828100jo8qvak",
-                  "firstName": "Sage",
-                  "lastName": "Sanford",
-                  "email": "Arlene95@hotmail.com",
-                  "__typename": "User"
+                  "id": "24f33b07-261e-49a2-8cd3-9d981339accb",
+                  "name": "Cypress",
+                  "timestamp": "2021-04-23T07:01:08.222432+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "24995712-28cc-4130-bd0a-4bc5c331aca4",
+                  "name": "name9230",
+                  "timestamp": "2021-04-23T07:01:36.762365+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "1cd5df99-5b8b-455a-b0ba-fe63720336fd",
+                  "name": "name12930",
+                  "timestamp": "2021-04-23T07:02:43.147538+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "8a3c9e05-6669-4ced-a677-ed4adbf8039a",
+                  "name": "Alexander",
+                  "timestamp": "2021-04-21T10:58:49.076245+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "4c0fde9b-e592-4870-b2dc-de8dc666cba4",
+                  "name": "Cypress",
+                  "timestamp": "2021-04-23T07:07:13.55346+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "fa7612a7-080f-497e-950d-9eaf2919dce4",
+                  "name": "Alexander",
+                  "timestamp": "2021-04-21T10:59:18.003233+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "6d889a9a-505d-434a-b24c-b7399ca890ca",
+                  "name": "name7030",
+                  "timestamp": "2021-04-23T07:19:33.880087+00:00",
+                  "__typename": "users"
+                },
+                {
+                  "id": "a55d5a31-5748-4c5c-a8e0-a29a75a5bd15",
+                  "name": "name19030",
+                  "timestamp": "2021-04-23T07:26:55.632706+00:00",
+                  "__typename": "users"
                 }
               ]
             }
@@ -641,53 +858,32 @@
         "matchHostIndex": 1
       },
       {
-        "url": "graphql?_md5=dcc27596d5370006f05a35fbef2bc8bd",
+        "url": "/graphql?_md5=34e20d245105a308a7a1320f15f3041f",
         "method": "POST",
         "request": {
           "body": {
-            "operationName": "Login",
+            "operationName": "InsertUser",
             "variables": {
-              "email": "cypress@xxx",
-              "password": "test"
+              "rocket": "Cypress auto stub rocket",
+              "name": "Cypress"
             },
-            "query": "mutation Login($email: String!, $password: String!) {\n  login(email: $email, password: $password) {\n    token\n    __typename\n  }\n}\n"
+            "query": "mutation InsertUser($name: String!, $rocket: String!) {\n  insert_users(objects: [{name: $name, rocket: $rocket}]) {\n    returning {\n      id\n      name\n      timestamp\n      rocket\n      __typename\n    }\n    __typename\n  }\n}\n"
           }
         },
         "response": {
           "body": {
             "data": {
-              "login": {
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImN5cHJlc3NAeHh4IiwidXNlcklkIjoiY2psdzd6NWhtMDAwOTI4MTA3eGlrNTh3ciIsImlhdCI6MTUzNjU3OTg2MSwiZXhwIjoxNTM2NzUyNjYxfQ.IV2njXVRcq7FX5Grfksu5-4KkBrcvkHpahKmu8BBf6Y",
-                "__typename": "AuthPayload"
-              }
-            }
-          }
-        },
-        "matchHostIndex": 1
-      },
-      {
-        "url": "graphql?_md5=44a9c2a1ff80034a427604ce8c87925f",
-        "method": "POST",
-        "request": {
-          "body": {
-            "operationName": "UpdateUser",
-            "variables": {
-              "id": "cjlw7z55e00062810eat5bvhw",
-              "firstName": "Cypress",
-              "lastName": "Test"
-            },
-            "query": "mutation UpdateUser($id: ID!, $firstName: String!, $lastName: String!) {\n  updateUser(id: $id, firstName: $firstName, lastName: $lastName) {\n    id\n    firstName\n    lastName\n    email\n    __typename\n  }\n}\n"
-          }
-        },
-        "response": {
-          "body": {
-            "data": {
-              "updateUser": {
-                "id": "cjlw7z5hm000928107xik58wr",
-                "firstName": "Cypress",
-                "lastName": "Test",
-                "email": "Philip84@hotmail.com",
-                "__typename": "User"
+              "insert_users": {
+                "returning": [
+                  {
+                    "id": "dae0ec7b-4204-4302-860d-c635b10b6224",
+                    "name": "Cypress",
+                    "timestamp": "2021-04-23T13:45:03.074281+00:00",
+                    "rocket": "Cypress auto stub rocket",
+                    "__typename": "users"
+                  }
+                ],
+                "__typename": "users_mutation_response"
               }
             }
           }

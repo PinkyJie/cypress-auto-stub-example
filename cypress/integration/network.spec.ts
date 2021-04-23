@@ -1,5 +1,5 @@
-describe('Network test', function() {
-  it('should show the user data', function() {
+describe('Network test', () => {
+  it('should show the user data', () => {
     cy.visit('/');
 
     // fetch all users
@@ -15,7 +15,7 @@ describe('Network test', function() {
 
     // query all users
     cy.get('#graphql-query-btn').click();
-    cy.get('#graphql-query-result').should('contain', 'firstName');
+    cy.get('#graphql-query-result').should('contain', 'user');
     // update a user
     cy.get('#graphql-mutation-btn').click();
     cy.waitUntilAllAPIFinished();

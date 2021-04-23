@@ -3,7 +3,7 @@ import React from 'react';
 function request(url) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', function() {
+    xhr.addEventListener('load', function () {
       resolve(xhr);
     });
 
@@ -13,7 +13,7 @@ function request(url) {
   });
 }
 
-class XhrAndFetch extends React.Component {
+export class XhrAndFetch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class XhrAndFetch extends React.Component {
   }
 
   xhrClick = () => {
-    request('https://reqres.in/api/users').then(res => {
+    request('https://reqres.in/api/users').then((res) => {
       this.setState({
         xhrResult: res.responseText,
       });
@@ -42,8 +42,8 @@ class XhrAndFetch extends React.Component {
         'Content-Type': 'application/json',
       },
     })
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         this.setState({
           postResult: JSON.stringify(json),
         });
@@ -57,9 +57,11 @@ class XhrAndFetch extends React.Component {
       promise = promise.then(() => {
         const userId = i % 10 === 0 ? 10 : i % 10;
         if (i === MAX) {
-          return fetch(`https://reqres.in/api/users/${userId}`)
-            .then(response => response.json())
-            .then(json => {
+          return fetch(`https://reqres.in/api/users/${userId}`, {
+            cache: 'no-cache',
+          })
+            .then((response) => response.json())
+            .then((json) => {
               this.setState({
                 fetchResult: JSON.stringify(json),
               });
@@ -111,5 +113,3 @@ class XhrAndFetch extends React.Component {
     );
   }
 }
-
-export default XhrAndFetch;

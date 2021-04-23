@@ -1,2 +1,2 @@
-import './util';
-import './autoStubAPI';
+import './commands';
+import './test-setup';
