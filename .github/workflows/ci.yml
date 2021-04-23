@@ -53,15 +53,16 @@ jobs:
           yarn serve &
 
       - name: Run Cypress test
-        run: yarn cy:run
+        run: yarn cy:run --browser chrome
 
       - name: Upload Cypress failed results
         if: ${{ always() }}
         uses: actions/upload-artifact@v2.2.3
         with:
+          name: cypress-failed
           path: |
             cypress/videos
-            cypress/snapshots
+            cypress/screenshots
 
       - name: Cleanup
         run: kill $(jobs -p) || true
