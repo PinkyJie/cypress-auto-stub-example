@@ -1,4 +1,4 @@
-# cypress-auto-stub-example [![CI](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml)
+# cypress-auto-stub-example [![CI](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-7.1.0-brightgreen)
 
 This is an example project to demonstrate how to automatically stub all API requests happened in your [Cypress](https://www.cypress.io/) test and how to record/replay them.
 
@@ -66,12 +66,12 @@ It also includes 2 examples for GraphQL:
   2. use `cy.writeFile` to write all recorded API responses in a fixture file
   3. while replaying, use `cy.fixture` to load API responses from the fixture file
 
-- Check the implementation for custom command `cy.waitUntilAllAPIFinished` in [`cypress/support/commands.ts`](cypress/support/commands.ts)
+- Check the implementation for custom command `cy.waitUntilAllAPIFinished` in [`cypress/support/commands.ts`](cypress/support/commands.ts#L11)
 
   1. maintain an internal counter for API calls: increase 1 when filing a new API request, decrease 1 when receiving a API response
   2. use Cypress's [Automatic Retry Assertion](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Asserting-in-English) to regularly check this counter, block the testing until it equals to 0
 
-- Check the custom URI configuration(adding `?md5=xxx`) for GraphQL in [`src/app.js`](src/app.js)
+- Check the custom URI configuration(adding `?md5=xxx`) for GraphQL in [`src/App.js`](src/App.js#L13)
 
 There are 4 new configuration parameters introduced in this example:
 
