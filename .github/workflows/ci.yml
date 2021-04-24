@@ -47,8 +47,10 @@ jobs:
           yarn serve &
 
       - name: Run Cypress test
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         id: run-cypress
-        run: yarn cy:run --browser chrome
+        run: yarn cy:run --browser chrome --record --key $CYPRESS_RECORD_KEY
         continue-on-error: true
 
       - name: Upload Cypress failed results
