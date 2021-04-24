@@ -25,18 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Get yarn cypress cache directory path
-        id: yarn-cypress-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cypress cache path)"
-
       - name: Setup yarn cache
         uses: actions/cache@v2
         id: yarn-cache
         with:
-          path: |
-            ${{ steps.yarn-cypress-cache-dir-path.outputs.dir }}
-            '**/node_modules'
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-3
+          path: '**/node_modules'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-4
 
       - name: Setup node
         uses: actions/setup-node@v2.1.5
@@ -47,6 +41,10 @@ jobs:
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
+
+      - name: Install Cypress binary
+        if: steps.yarn-cache.outputs.cache-hit == 'true'
+        run: yarn cypress install
 
       - name: Build and serve
         run: |
