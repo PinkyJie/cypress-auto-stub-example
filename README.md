@@ -1,4 +1,4 @@
-# cypress-auto-stub-example [![CI](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-7.1.0-brightgreen)
+# cypress-auto-stub-example [![CI](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/PinkyJie/cypress-auto-stub-example/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-7.1.0-brightgreen) [![cypress-auto-stub-example](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/nf8wkk/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/nf8wkk/runs)
 
 This is an example project to demonstrate how to automatically stub all API requests happened in your [Cypress](https://www.cypress.io/) test and how to record/replay them.
 
