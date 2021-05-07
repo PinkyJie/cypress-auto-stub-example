@@ -1,6 +1,6 @@
 {
-  "Network test should show the user data": {
-    "timestamp": "2021-04-23T13:45:03.341Z",
+  "Network test should show the user data by XHR": {
+    "timestamp": "2021-05-07T12:20:38.843Z",
     "records": [
       {
         "url": "/api/users",
@@ -79,8 +79,8 @@
           "body": {
             "name": "Cypress",
             "job": "Tester",
-            "id": "251",
-            "createdAt": "2021-04-23T13:44:58.937Z"
+            "id": "662",
+            "createdAt": "2021-05-07T12:20:34.256Z"
           }
         },
         "matchHostIndex": 0
@@ -774,7 +774,12 @@
           }
         },
         "matchHostIndex": 0
-      },
+      }
+    ]
+  },
+  "Network test should show the user data by GraphQL": {
+    "timestamp": "2021-05-07T12:20:40.436Z",
+    "records": [
       {
         "url": "/graphql?_md5=2a6e3479341000a82c00a3e262d00959",
         "method": "POST",
@@ -792,63 +797,63 @@
             "data": {
               "users": [
                 {
-                  "id": "5c188401-b4a3-4b66-a0d2-e66f3ccfdc5f",
-                  "name": "sfdsf",
-                  "timestamp": "2021-04-23T12:50:42.07137+00:00",
+                  "id": "e6aaf5cf-ef13-42e2-9805-592fdee760f4",
+                  "name": "User_4783907",
+                  "timestamp": "2021-05-07T10:13:40.847259+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "71089b38-6fad-4efc-aedc-344681dc57d2",
-                  "name": "name16630",
-                  "timestamp": "2021-04-23T13:07:56.226828+00:00",
+                  "id": "8cd511de-2fa9-4379-a64a-d969603b5e01",
+                  "name": "Marek43982090",
+                  "timestamp": "2021-05-07T10:13:49.691399+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "24f33b07-261e-49a2-8cd3-9d981339accb",
-                  "name": "Cypress",
-                  "timestamp": "2021-04-23T07:01:08.222432+00:00",
+                  "id": "b1082aba-b681-46a7-8ca3-57c77d27b7ea",
+                  "name": "Marek53235628",
+                  "timestamp": "2021-05-07T10:14:11.613879+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "24995712-28cc-4130-bd0a-4bc5c331aca4",
-                  "name": "name9230",
-                  "timestamp": "2021-04-23T07:01:36.762365+00:00",
+                  "id": "ec404d17-6db8-40ff-96e3-592d777ac37e",
+                  "name": "Marek37800560",
+                  "timestamp": "2021-05-07T10:14:17.67472+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "1cd5df99-5b8b-455a-b0ba-fe63720336fd",
-                  "name": "name12930",
-                  "timestamp": "2021-04-23T07:02:43.147538+00:00",
+                  "id": "45fc4bac-c1fc-4952-9697-b5c212cace32",
+                  "name": "Marek66329809",
+                  "timestamp": "2021-05-07T10:14:46.332687+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "8a3c9e05-6669-4ced-a677-ed4adbf8039a",
-                  "name": "Alexander",
-                  "timestamp": "2021-04-21T10:58:49.076245+00:00",
+                  "id": "f9e7fc5b-39df-4162-912c-fbd82c35d3c7",
+                  "name": "PiotrC",
+                  "timestamp": "2021-04-20T18:46:03.738464+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "4c0fde9b-e592-4870-b2dc-de8dc666cba4",
-                  "name": "Cypress",
-                  "timestamp": "2021-04-23T07:07:13.55346+00:00",
+                  "id": "f374b939-6a93-439a-93f8-cef5dec6e8c5",
+                  "name": "User_12581564",
+                  "timestamp": "2021-05-07T10:16:50.575374+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "fa7612a7-080f-497e-950d-9eaf2919dce4",
-                  "name": "Alexander",
-                  "timestamp": "2021-04-21T10:59:18.003233+00:00",
+                  "id": "23de75ba-88be-49ac-9364-873454f11a11",
+                  "name": "Marek3555073",
+                  "timestamp": "2021-05-07T10:16:53.567163+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "6d889a9a-505d-434a-b24c-b7399ca890ca",
-                  "name": "name7030",
-                  "timestamp": "2021-04-23T07:19:33.880087+00:00",
+                  "id": "1351b638-6b8f-4042-b364-0758caee40d4",
+                  "name": "User_3455251",
+                  "timestamp": "2021-05-07T10:17:04.060342+00:00",
                   "__typename": "users"
                 },
                 {
-                  "id": "a55d5a31-5748-4c5c-a8e0-a29a75a5bd15",
-                  "name": "name19030",
-                  "timestamp": "2021-04-23T07:26:55.632706+00:00",
+                  "id": "2afe287c-507d-44bd-ad96-478fcd21f3c7",
+                  "name": "name18130",
+                  "timestamp": "2021-05-07T10:59:37.754183+00:00",
                   "__typename": "users"
                 }
               ]
@@ -876,9 +881,9 @@
               "insert_users": {
                 "returning": [
                   {
-                    "id": "dae0ec7b-4204-4302-860d-c635b10b6224",
+                    "id": "c95afeaa-1856-468a-91d9-bc144ab9debb",
                     "name": "Cypress",
-                    "timestamp": "2021-04-23T13:45:03.074281+00:00",
+                    "timestamp": "2021-05-07T12:20:40.276628+00:00",
                     "rocket": "Cypress auto stub rocket",
                     "__typename": "users"
                   }

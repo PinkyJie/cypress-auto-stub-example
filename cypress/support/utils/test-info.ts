@@ -9,7 +9,7 @@ export function getTestCaseInfo(): TestCaseInfo {
   const testFileInfo = Cypress.spec;
   const fixtureName = getFixtureName(testFileInfo);
   // this structure is got from Chrome dev tools
-  const currentTest = (Cypress as any).mocha._mocha.suite.suites[0].tests[0];
+  const currentTest = (Cypress as any).mocha.getRunner().suite.ctx.currentTest;
 
   return {
     testFileInfo,

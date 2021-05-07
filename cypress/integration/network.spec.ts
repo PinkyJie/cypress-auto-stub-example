@@ -1,5 +1,5 @@
 describe('Network test', () => {
-  it('should show the user data', () => {
+  it('should show the user data by XHR', () => {
     cy.visit('/');
 
     // fetch all users
@@ -14,6 +14,10 @@ describe('Network test', () => {
     cy.get('#fetch-btn').click();
     cy.waitUntilAllAPIFinished();
     cy.get('#fetch-result').should('contain', '"id":10');
+  });
+
+  it('should show the user data by GraphQL', () => {
+    cy.visit('/');
 
     // query all users
     cy.get('#graphql-query-btn').click();
